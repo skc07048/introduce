@@ -1,0 +1,86 @@
+@charset "utf-8";
+@import url("./reset.css");
+@import url("./common.css");
+
+$color-black: #000;
+$color-white: #fff;
+$font-caveat: "Caveat", cursive;
+$font-notokr: "Noto Sans KR", sans-serif;
+$font-size: 18px;
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  .intro_inner {
+    width: 100%;
+    height: 100%;
+    background: $color-black;
+    color: $color-white;
+
+    .intro_title {
+      font-family: $font-caveat;
+      text-transform: uppercase;
+      font-size: $font-size * 3;
+      font-weight: 600;
+      position: absolute;
+      top: 13%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      animation: titleColorChange 3s ease-in-out forwards;
+    }
+
+    .intro_bg {
+      width: 50vw;
+      height: 50vh;
+      @include position-center();
+    }
+
+    .intro_loading {
+      width: 30vw;
+      height: 2px;
+      background-color: $color-white;
+      position: absolute;
+      top: 84%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: loadingAnimation 3s linear forwards;
+    }
+  }
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0;
+    background-color: #3a3a3a;
+  }
+  50% {
+    width: 15%;
+    background-color: #5a5a5a;
+  }
+  100% {
+    width: 30%;
+    background-color: #fff;
+  }
+}
+
+@keyframes titleColorChange {
+  0% {
+    color: #3a3a3a;
+  }
+  50% {
+    color: #5a5a5a;
+  }
+  100% {
+    color: #fff;
+  }
+}

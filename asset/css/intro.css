@@ -1,0 +1,69 @@
+@import url("./reset.css");
+@import url("./common.css");
+#intro {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+#intro .intro_inner {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+}
+#intro .intro_inner .intro_title {
+  font-family: "Caveat", cursive;
+  text-transform: uppercase;
+  font-size: 54px;
+  font-weight: 600;
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  animation: titleColorChange 3s ease-in-out forwards;
+}
+#intro .intro_inner .intro_bg {
+  width: 50vw;
+  height: 50vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#intro .intro_inner .intro_loading {
+  width: 30vw;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: loadingAnimation 3s linear forwards;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    width: 0;
+    background-color: #3a3a3a;
+  }
+  50% {
+    width: 15%;
+    background-color: #5a5a5a;
+  }
+  100% {
+    width: 30%;
+    background-color: #fff;
+  }
+}
+@keyframes titleColorChange {
+  0% {
+    color: #3a3a3a;
+  }
+  50% {
+    color: #5a5a5a;
+  }
+  100% {
+    color: #fff;
+  }
+}

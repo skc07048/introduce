@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./asset/css/main.css" />
+    <link rel="stylesheet" href="./asset/css/intro.css" />
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <!-- Jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 인트로 -->
+    <div id="intro">
+      <div class="intro_inner">
+        <h2 class="intro_title">web publisher</h2>
+        <div class="intro_bg">
+          <img src="./asset/img/intro/introbg.gif" alt="인트로 배경 이미지" />
+        </div>
+        <div class="intro_loading"></div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <!-- 헤더  -->
+      <header id="header">
+        <div class="con">
+          <!-- 로고 -->
+          <h1 id="logo">
+            <a href="/">portfolio</a>
+          </h1>
+          <!-- 메뉴 -->
+          <nav id="gnb">
+            <ul>
+              <li>
+                <a href="#" class="list_wrap">
+                  <div class="list_box">
+                    <p>ABOUT</p>
+                  </div>
+                  <p class="list_text">ABOUT</p>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list_wrap">
+                  <div class="list_box">
+                    <p>PROJECT</p>
+                  </div>
+                  <p class="list_text">PROJECT</p>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="list_wrap">
+                  <div class="list_box">
+                    <p>CONTACT</p>
+                  </div>
+                  <p class="list_text">CONTACT</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!-- 메인 -->
+      <main>
+        <section class="main">
+          <div class="main_content">
+            <div class="main_bg">
+              <video
+                src="./asset/img/main/mainbg.mp4"
+                autoplay
+                muted
+                loop
+              ></video>
+            </div>
+          </div>
+        </section>
+      </main>
+      <!-- 푸터 -->
+      <footer></footer>
+    </div>
+    <!-- js -->
+    <script src="./asset/js/main.js"></script>
+  </body>
+</html>

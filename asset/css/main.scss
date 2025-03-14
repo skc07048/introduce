@@ -1,0 +1,34 @@
+@charset "utf-8";
+@import url("./reset.css");
+@import url("./common.css");
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main {
+  height: 100vh;
+  position: relative;
+  .main_content {
+    width: 100%;
+    height: 100%;
+    .main_bg {
+      width: 100%;
+      height: 100%;
+      video {
+        width: 50vw;
+        height: 50vh;
+        @include position-center();
+        z-index: -1;
+      }
+    }
+  }
+}
