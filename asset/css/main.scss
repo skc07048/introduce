@@ -14,21 +14,109 @@
   transform: translate(-50%, -50%);
 }
 
-.main {
-  height: 100vh;
-  position: relative;
+#main {
+  height: 300vh;
   .main_content {
     width: 100%;
-    height: 100%;
-    .main_bg {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    .main_video {
       width: 100%;
       height: 100%;
       video {
-        width: 50vw;
-        height: 50vh;
+        width: 50%;
+        height: 50%;
         @include position-center();
-        z-index: -1;
+      }
+    }
+    .main_title {
+      border-radius: 30px;
+      border: 1px solid #333;
+      backdrop-filter: blur(30px);
+      background: rgba($color: #4d4d4d, $alpha: 0.1);
+      padding: 30px;
+      position: absolute;
+      top: 18vh;
+      left: 10vw;
+      opacity: 0;
+      transition: opacity 0.5s;
+      h2 {
+        font-size: 6vw;
+        font-weight: 500;
+      }
+    }
+    .main_description {
+      border-radius: 30px;
+      border: 1px solid #333;
+      padding: 30px;
+      backdrop-filter: blur(30px);
+      background: rgba($color: #4d4d4d, $alpha: 0.1);
+      position: absolute;
+      top: 45vh;
+      right: 10vw;
+      opacity: 0;
+      transition: opacity 0.5s;
+      p {
+        font-size: 2vw;
+        font-weight: 300;
+        line-height: 1.4;
+      }
+    }
+    .main_description2 {
+      border-radius: 30px;
+      border: 1px solid #333;
+      padding: 30px;
+      backdrop-filter: blur(30px);
+      background: rgba($color: #4d4d4d, $alpha: 0.1);
+      position: absolute;
+      top: 65vh;
+      left: 25vw;
+      opacity: 0;
+      transition: opacity 0.5s;
+      p {
+        font-size: 1.5vw;
+        font-weight: 300;
+        line-height: 1.4;
       }
     }
   }
+}
+// project
+#project {
+  height: 300vh;
+  .project_content {
+    position: sticky;
+    top: 0;
+    .visual_wrap {
+      .visual_item:first-child {
+        position: absolute;
+        top: 10vh;
+        left: 3vw;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .visual_item:nth-child(2) {
+        position: absolute;
+        top: 20vh;
+        left: 3vw;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.visual_text_wrap {
+  .visual_text {
+    font-size: 5vw;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+.visual_img {
+  width: 100px;
+  height: 100px;
 }

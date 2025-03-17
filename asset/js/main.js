@@ -8,17 +8,27 @@ $(document).ready(function () {
       });
     }, 3000);
   });
-
+  //  gsap
   gsap.registerPlugin(ScrollTrigger);
-
-  const header = gsap
+  // main
+  const main = gsap
     .timeline({
       scrollTrigger: {
-        trigger: ".main",
-        start: "0% 10%",
+        trigger: "#main",
+        start: "0% 0%",
         end: "100% 100%",
-        markers: true,
+        scrub: 1,
       },
     })
-    .to("#header", { y: 0 });
+    .to(
+      ".main_bg",
+      {
+        opacity: 1,
+        width: "40vw",
+      },
+      "+=0.5"
+    )
+    .to(".main_title", { opacity: 1 })
+    .to(".main_description", { opacity: 1 })
+    .to(".main_description2", { opacity: 1 });
 });
