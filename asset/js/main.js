@@ -8,6 +8,9 @@ $(document).ready(function () {
       });
     }, 3000);
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   //  gsap
   gsap.registerPlugin(ScrollTrigger);
   // main
@@ -17,18 +20,39 @@ $(document).ready(function () {
         trigger: "#main",
         start: "0% 0%",
         end: "100% 100%",
-        scrub: 1,
+        scrub: 0,
       },
     })
-    .to(
-      ".main_bg",
-      {
-        opacity: 1,
-        width: "40vw",
-      },
-      "+=0.5"
-    )
+    .to(".main_bg", { width: "50%", height: "50%" })
     .to(".main_title", { opacity: 1 })
     .to(".main_description", { opacity: 1 })
     .to(".main_description2", { opacity: 1 });
+  // visual
+  const visual = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#visual",
+        start: "0% 0%",
+        end: "+=100%",
+        scrub: 0,
+        pin: true,
+      },
+    })
+    .to(".visual_text_wrap:nth-child(1)", { opacity: 1, y: 0 })
+    .to(".visual_text_wrap:nth-child(3)", { opacity: 1, y: 0 }, "+=0.5")
+    .to(".visual_text_wrap:nth-child(2)", { opacity: 1 }, "+=0.5")
+    .to(".visual_video", { width: "23%", opacity: 1 })
+    .to(".visual_img", { opacity: 1 })
+    .to(".visual_icon", { opacity: 1 });
+
+  const visualIcon = gsap
+    .timeline({
+      yoyo: true,
+      repeat: -1,
+      ease: "power3 out",
+      scrub: 1,
+    })
+    .to(".visual_img", { rotate: 360, duration: 2, stagger: 0.5 })
+    .to(".visual_icon:nth-child(2)", { rotateY: 360, duration: 3 })
+    .to(".visual_icon:nth-child(3)", { rotate: 360, duration: 3 });
 });

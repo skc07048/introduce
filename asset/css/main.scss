@@ -13,7 +13,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+// main
 #main {
   height: 300vh;
   .main_content {
@@ -25,8 +25,8 @@
       width: 100%;
       height: 100%;
       video {
-        width: 50%;
-        height: 50%;
+        width: 100%;
+        height: 100%;
         @include position-center();
       }
     }
@@ -82,41 +82,91 @@
     }
   }
 }
-// project
-#project {
-  height: 300vh;
-  .project_content {
-    position: sticky;
-    top: 0;
+// visual
+#visual {
+  height: 100vh;
+  .visual_content {
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
     .visual_wrap {
-      .visual_item:first-child {
-        position: absolute;
-        top: 10vh;
-        left: 3vw;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .visual_item {
+        width: 100%;
+        overflow: hidden;
         display: flex;
+        justify-content: center;
         align-items: center;
         gap: 20px;
-      }
-      .visual_item:nth-child(2) {
-        position: absolute;
-        top: 20vh;
-        left: 3vw;
-        display: flex;
-        align-items: center;
-        gap: 20px;
+
+        .visual_text_wrap {
+          transition: opacity 0.5s, transform 0.5s;
+          .visual_text {
+            font-size: 7vw;
+            font-weight: 700;
+            text-transform: uppercase;
+            line-height: 1;
+          }
+        }
+        .visual_text_wrap:nth-child(1) {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        .visual_text_wrap:nth-child(2) {
+          opacity: 0;
+        }
+        .visual_text_wrap:nth-child(3) {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+
+        .visual_video {
+          width: 0;
+          opacity: 0;
+          height: 120px;
+          transition: width 0.5s, opacity 0.5s;
+
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .visual_img {
+          width: 120px;
+          height: 120px;
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
+
+        .visual_icon {
+          opacity: 0;
+          transition: opacity 0.5s;
+        }
       }
     }
   }
 }
+// project
+#project {
+  height: 100vh;
 
-.visual_text_wrap {
-  .visual_text {
-    font-size: 5vw;
-    font-weight: 700;
-    text-transform: uppercase;
+  .project_content {
+    .project_content_inner {
+      .project_list {
+        .project_item {
+        }
+      }
+    }
   }
-}
-.visual_img {
-  width: 100px;
-  height: 100px;
 }
