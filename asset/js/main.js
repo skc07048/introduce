@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrub: 0,
       },
     })
-    .to(".main_bg", { width: "50%", height: "50%" })
+    .to(".main_bg", { width: "80%", height: "80%" })
     .to(".main_title", { opacity: 1 })
     .to(".main_description", { opacity: 1 })
     .to(".main_description2", { opacity: 1 });
@@ -55,4 +55,44 @@ document.addEventListener("DOMContentLoaded", () => {
     .to(".visual_img", { rotate: 360, duration: 2, stagger: 0.5 })
     .to(".visual_icon:nth-child(2)", { rotateY: 360, duration: 3 })
     .to(".visual_icon:nth-child(3)", { rotate: 360, duration: 3 });
+
+  const project = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".project_content",
+        start: "0% 0%",
+        end: "100% 100%",
+        endTrigger: "#project",
+        scrub: 1,
+      },
+    })
+
+    .to(".project_item1", { xPercent: -50, scale: 0, opacity: 0, duration: 2 })
+
+    .fromTo(
+      ".project_item2",
+      { xPercent: 50, scale: 0, opacity: 0 },
+      { xPercent: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.out" }
+    )
+    .to(".project_item2", { xPercent: -50, scale: 0, opacity: 0, duration: 2 })
+
+    .fromTo(
+      ".project_item3",
+      { xPercent: 50, scale: 0, opacity: 0 },
+      { xPercent: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.out" }
+    )
+    .to(".project_item3", { xPercent: -50, scale: 0, opacity: 0, duration: 2 })
+
+    .fromTo(
+      ".project_item4",
+      { xPercent: 50, scale: 0, opacity: 0 },
+      { xPercent: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.out" }
+    )
+    .to(".project_item4", { xPercent: -50, scale: 0, opacity: 0, duration: 2 })
+
+    .fromTo(
+      ".project_item5",
+      { xPercent: 50, scale: 0, opacity: 0 },
+      { xPercent: 0, scale: 1, opacity: 1, duration: 2, ease: "power2.out" }
+    );
 });
